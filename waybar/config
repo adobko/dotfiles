@@ -1,0 +1,187 @@
+[
+  {
+    "custom/divider": {
+      "format": "|",
+      "interval": "once",
+      "tooltip": false
+    },
+    "custom/power": {
+      "format": "",
+      "interval": "once",
+      "tooltip": false,
+      "on-click": "~/.config/rofi/power.sh"
+    },
+    "exclusive": true,
+    "custom/gpu-usage": {
+      "exec": "nvidia-smi -q -d UTILIZATION | grep 'GPU' | grep -oP '\\d+(?= %)'",
+      "format": " {}%",
+      "interval": 10,
+      "max-length": 10,
+      "tooltip": false
+    },
+    "custom/browser-quick-link": {
+      "format": "󰖟",
+      "on-click": "brave",
+      "tooltip": false
+    },
+    "custom/vscode-quick-link": {
+      "format": "",
+      "on-click": "code",
+      "tooltip": false
+    },
+    "custom/files-quick-link": {
+      "format": "",
+      "on-click": "nautilus",
+      "tooltip": false
+    },
+    "custom/terminal-quick-link": {
+      "format": "",
+      "on-click": "alacritty",
+      "tooltip": false
+    },
+
+    "backlight": {
+      "tooltip": false,
+      "device": "acpi_video0",
+      "format": "󰖨 {}"
+    },
+    "battery": {
+      "tooltip": false,
+      "format": "󰁹 {}%"
+    },
+    "clock": {
+      "tooltip": true,
+      "format": " {:%H:%M   %d/%m}",
+      "tooltip-format": "<big>{:%H:%M:%S  %A}</big>\n<tt>{calendar}</tt>",
+      "interval": 1
+    },
+    "cpu": {
+      "tooltip": false,
+      "format": " {}%",
+      "interval": 10,
+      "max-length": 10,
+      "on-click": ""
+    },
+    "gtk-layer-shell": true,
+    "height": 0,
+    "hyprland/window": {
+      "tooltip": false,
+      "format": "{}"
+    },
+    "layer": "top",
+    "memory": {
+      "tooltip": false,
+      "format": "  {}%",
+      "format-alt": " {used:0.1f}G",
+      "interval": 30,
+      "max-length": 10
+    },
+    "bluetooth": {
+      "tooltip": false,
+      "format-on": "󰂯",
+      "format-off": "󰂲",
+      "format-disabled": "󰂲",
+      "format-connected": "󰂱 {device_alias}",
+      "on-click": "blueman-manager",
+      "interval": 10,
+      "max-length": 15
+    },
+    "hyprland/language": {
+    "format": "{}",
+    "format-sk": "SK",
+    "format-en": "US"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}",
+      "tooltip": false,
+      "format-icons": {
+        "default": "\uf0e7",
+        "performance": "\uf0e7",
+        "balanced": "\uf24e",
+        "power-saver": "\uf06c"
+      }
+    },
+    "mod": "dock",
+    "modules-center": [
+      "hyprland/window"
+    ],
+    "modules-left": [
+      "hyprland/workspaces",
+      "custom/divider",
+      "cpu",
+      "custom/gpu-usage",
+      "memory",
+      "custom/files-quick-link",
+      "custom/terminal-quick-link",
+      "custom/vscode-quick-link",
+      "custom/browser-quick-link"
+    ],
+    "modules-right": [
+      "bluetooth",
+      "network",
+      "battery",
+      "custom/divider",
+      "backlight",
+      "pulseaudio",
+      "custom/divider",
+      "clock",
+      "custom/divider",
+      "power-profiles-daemon",
+      "hyprland/language",
+      "custom/power"
+    ],
+    "network": {
+      "tooltip": false,
+      "format": "󰖩 {essid}",
+      "format-disconnected": "󰖩",
+      "format-disabled": "󰖪",
+      "on-click": "~/.config/rofi/wifi.sh"
+    },
+    "passtrough": false,
+    "position": "bottom",
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-icons": {
+        "car": "",
+        "default": [
+          "",
+          "",
+          ""
+        ],
+        "hands-free": "",
+        "headphone": "",
+        "headset": "",
+        "phone": "",
+        "portable": ""
+      },
+      "format-muted": " Muted",
+      "on-click": "pavucontrol", 
+      "on-scroll-down": "pamixer -d 5",
+      "on-scroll-up": "pamixer -i 5",
+      "scroll-step": 5,
+      "tooltip": false
+    },
+    "pulseaudio#microphone": {
+      "format": "{format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": " Muted",
+      "on-click": "pamixer --default-source -t",
+      "on-scroll-down": "pamixer --default-source -d 5",
+      "on-scroll-up": "pamixer --default-source -i 5",
+      "scroll-step": 5,
+      "tooltip": false
+    },
+    "tray": {
+      "icon-size": 13,
+      "spacing": 10,
+      "tooltip": false
+    },
+    "wlr/workspaces": {
+      "all-outputs": true,
+      "on-click": "activate",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "on-scroll-up": "hyprctl dispatch workspace e+1"
+    }
+  }
+]

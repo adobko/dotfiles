@@ -1,10 +1,11 @@
-*
+/*
+
 !packages.txt
 !.gitignore
 
-!/kitty/
-!/hypr/
-!/neofetch/
-!/mako/
-!/waybar/
-!/rofi/
+!kitty/
+!hypr/
+!neofetch/
+!mako/
+!waybar/
+!rofi/
