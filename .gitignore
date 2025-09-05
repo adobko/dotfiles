@@ -1,0 +1,10 @@
+*
+!packages.txt
+!.gitignore
+
+!kitty/
+!hypr/
+!neofetch/
+!mako/
+!waybar/
+!rofi/
