@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CHOSEN=$(printf " Shutdown\n󰑓 Reboot\n󰤄 Sleep\n Lock" | rofi -dmenu)
+CHOSEN=$(printf " Shutdown\n󰑓 Reboot\n󰤄 Sleep\n Lock" | rofi -dmenu -theme "~/.config/rofi/power.rasi")
 
 case "$CHOSEN" in
 	" Shutdown") poweroff ;;

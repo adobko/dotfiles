@@ -1,0 +1,23 @@
+@import "~/.config/rofi/config.rasi"
+
+
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       330px;
+    height: 350px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    border-radius:               20px;
+    cursor:                      "default";
+    background-color:            @background;
+    border-color: @background-alt;
+    background-image: 
+    url("~/Pictures/sys-images/brand-of-sacrifice.png", width);
+}

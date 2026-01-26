@@ -1,7 +1,8 @@
 @define-color bg-color rgb(68, 71, 90);               /* #3C413C */
 @define-color bg-color-tray rgb (40, 42, 54);         /* #3C4144 */
 @define-color bg-color-ws rgb (40, 42, 54);         /* #3C4144 */
-@define-color bg-color-0 rgb (40, 42, 54);            /* #3C4144 */
+@define-color bg-color rgba(40, 42, 54, 0.5);            /* #3C4144 */
+@define-color bg-color-0 rgb(40, 42, 54);            /* #475f94 */
 @define-color bg-color-1 rgb(40, 42, 54);            /* #475f94 */
 @define-color bg-color-2 rgb(40, 42, 54);           /* #107AB0 */
 @define-color bg-color-3 rgb(40, 42, 54);            /* #017374 */
@@ -36,7 +37,7 @@
 }
 
 window#waybar {
-    background-color: rgba(40, 42, 54, 0.5);
+    background-color: /*rgba(40, 42, 54, 0.5)*/transparent;
     border-bottom: none;
     color: @fg-color;
     transition-property: background-color;
@@ -58,7 +59,8 @@ window#waybar.chromium {
 
 #workspaces button {
     padding: 0 5px;
-    background-color: transparent;
+    background-color: @bg-color;
+    border-radius: 50%;
     color: @fg-color;
     border-bottom: 3px solid transparent;
 }
@@ -86,28 +88,6 @@ window#waybar.chromium {
     border-bottom: 3px solid @fg-color;
 }
 
-#tray {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-tray;
-    color: @fg-color;
-}
-
-
-#clock {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-1;
-    color: @fg-color;
-}
-
-#backlight {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-3;
-    color: @fg-color;
-}
-
 #battery {
     padding: 0 10px;
     margin: 0 4px;
@@ -131,7 +111,6 @@ window#waybar.chromium {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
 #custom-bat0,
 #custom-bat0.charging {
     padding: 0 10px;
@@ -153,109 +132,6 @@ window#waybar.chromium {
     animation-direction: alternate;
 }
 
-#network {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-6;
-    color: @fg-color;
-}
-
-#bluetooth {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-6;
-    color: @fg-color;
-}
-
-#custom-vpn {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-6;
-    color: @fg-color;
-}
-
-#pulseaudio {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-12;
-    color: @fg-color;
-}
-
-#temperature {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-7;
-    color: @fg-color;
-}
-
-#backlight {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-8;
-    color: @fg-color;
-}
-
-#pulseaudio {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-9;
-    color: @fg-color;
-}
-
-#custom-media {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-10;
-    color: @fg-color;
-}
-
-#cpu {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-13;
-    color: @fg-color;
-}
-
-#memory {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-5;
-    color: @fg-color;
-}
-
-#idle_inhibitor {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-14;
-    color: @fg-color;
-}
-
-#mpd {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-15;
-    color: @fg-color;
-}
-
-#custom-spotify {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-15;
-    color: @fg-color;
-}
-
-#custom-kbd {
-    padding: 0 10px;
-    margin: 0 4px;
-    background-color: @bg-color-11;
-    color: @fg-color;
-}
-
-#custom-kbd.none {
-    background-color: transparent;
-    color: transparent;
-}
-
 @keyframes blink {
     to {
         background-color: @fg-color;
@@ -271,40 +147,26 @@ label:focus {
     background-color: @alert-bg-color;
 }
 
-#custom-vpn.disconnected {
-    background-color: @alert-bg-color;
-}
-
-#pulseaudio.muted {
-    background-color: @inactive-bg-color;
-    color: @inactive-fg-color;
-}
-
-#custom-media.custom-vlc {
-    background-color: @bg-color;
-}
-
 #temperature.critical {
     background-color: @alert-bg-color;
 }                                       
 
-#idle_inhibitor.activated {
-    background-color: @fg-color;
-    color: @bg-color;
+#cpu, #custom-gpu-usage, #memory, 
+#bluetooth, #network, #pulseaudio, 
+#clock, #backlight, #battery, #temperature {
+    padding: 0 15px;
+    margin: 0 2px;
+    border-radius: 9999px;
+    background-color: @bg-color;
+    color: @fg-color;
 }
 
-#mpd.disconnected {
-    background-color: transparent;
-    color: transparent;
+#custom-vscode-quick-link, #custom-files-quick-link, 
+#custom-browser-quick-link, #custom-terminal-quick-link
+#power-profiles-daemon, #hyprland-language, #custom-power {
+    margin: 2px;
+    padding: 0 5px;
+    color: @fg-color;
+    background-color: @bg-color;
+    border-radius: 50%;
 }
-
-#mpd.stopped {
-    background-color: transparent;
-    color: transparent;
-}
-
-#mpd.paused {
-    background-color: @inactive-bg-color;
-    color: @inactive-fg-color;
-}
-

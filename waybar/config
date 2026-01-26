@@ -31,7 +31,7 @@
     },
     "custom/files-quick-link": {
       "format": "",
-      "on-click": "nautilus",
+      "on-click": "nemo",
       "tooltip": false
     },
     "custom/terminal-quick-link": {
@@ -115,7 +115,7 @@
       "custom/files-quick-link",
       "custom/terminal-quick-link",
       "custom/vscode-quick-link",
-      "custom/browser-quick-link"
+      "custom/browser-quick-link",
     ],
     "modules-right": [
       "bluetooth",
