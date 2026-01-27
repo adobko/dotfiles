@@ -1,8 +1,9 @@
 [
   {
     "custom/divider": {
-      "format": "|",
+      "format": " ",
       "interval": "once",
+      "hide-empty-text": false,
       "tooltip": false
     },
     "custom/power": {
@@ -66,7 +67,12 @@
     "height": 0,
     "hyprland/window": {
       "tooltip": false,
-      "format": "{}"
+      "format": "{title}",
+      "max-length": 50,
+      "rewrite": {
+          "": "" 
+      },
+      "hide-empty-text": true
     },
     "layer": "top",
     "memory": {
@@ -108,26 +114,24 @@
     ],
     "modules-left": [
       "hyprland/workspaces",
-      "custom/divider",
       "cpu",
       "custom/gpu-usage",
       "memory",
-      "custom/files-quick-link",
-      "custom/terminal-quick-link",
-      "custom/vscode-quick-link",
-      "custom/browser-quick-link",
+      "battery"
+      // "custom/files-quick-link",
+      // "custom/terminal-quick-link",
+      // "custom/vscode-quick-link",
+      // "custom/browser-quick-link"
     ],
     "modules-right": [
       "bluetooth",
       "network",
-      "battery",
       "custom/divider",
-      "backlight",
+      // "backlight",
       "pulseaudio",
-      "custom/divider",
       "clock",
+      // "power-profiles-daemon",
       "custom/divider",
-      "power-profiles-daemon",
       "hyprland/language",
       "custom/power"
     ],
@@ -177,11 +181,8 @@
       "spacing": 10,
       "tooltip": false
     },
-    "wlr/workspaces": {
-      "all-outputs": true,
-      "on-click": "activate",
-      "on-scroll-down": "hyprctl dispatch workspace e-1",
-      "on-scroll-up": "hyprctl dispatch workspace e+1"
+    "hyprland/workspaces": {
+      "format": "{id}"
     }
   }
 ]
