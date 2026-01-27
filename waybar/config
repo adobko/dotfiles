@@ -1,7 +1,7 @@
 [
   {
     "custom/divider": {
-      "format": " ",
+      "format": "|",
       "interval": "once",
       "hide-empty-text": false,
       "tooltip": false
@@ -114,6 +114,7 @@
     ],
     "modules-left": [
       "hyprland/workspaces",
+      "custom/divider",
       "cpu",
       "custom/gpu-usage",
       "memory",
@@ -126,7 +127,6 @@
     "modules-right": [
       "bluetooth",
       "network",
-      "custom/divider",
       // "backlight",
       "pulseaudio",
       "clock",

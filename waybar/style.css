@@ -35,10 +35,6 @@ window#waybar.chromium {
     border: none;
 }
 
-#workspaces {
-    min-width: 165px;
-}
-
 #workspaces button {
     padding: 0 5px;
     background-color: @bg-color;
@@ -133,7 +129,7 @@ label:focus {
 
 #cpu, #custom-gpu-usage, #memory, 
 #bluetooth, #network, #pulseaudio, 
-#clock, #backlight, #battery, #temperature, #window {
+#clock, #backlight, #battery, #temperature/*, #window*/ {
     padding: 2px 15px;
     margin: 0px 2px;
     border-radius: 9999px;
@@ -167,13 +163,9 @@ window#waybar.empty #window, tooltip {
     border-radius: 50%;
 }
 
-#custom-divider {
-    margin: 0 15px;
-}
-
 tooltip label {
     color: @fg-color;
     background-color: @bg-color;
-    padding: 15 15px;
+    padding: 15px 15px;
     border-radius: 15px;
 }
