@@ -77,8 +77,8 @@
     "layer": "top",
     "memory": {
       "tooltip": false,
-      "format": "  {}%",
-      "format-alt": " {used:0.1f}G",
+      "format": " {}%",
+      "format-alt": " {used:0.1f}G",
       "interval": 30,
       "max-length": 10
     },
